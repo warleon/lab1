@@ -10,19 +10,6 @@
 namespace bg = boost::geometry;
 namespace bgi = boost::geometry::index;
 
-// namespace boost {
-// namespace geometry {
-// namespace index {
-// template <typename Box>
-// struct indexable<boost::shared_ptr<Box>> {
-//   typedef boost::shared_ptr<Box> V;
-//   typedef Box const& result_type;
-//   result_type operator()(V const& v) const { return *v; }
-// };
-// }  // namespace index
-// }  // namespace geometry
-// }  // namespace boost
-
 namespace utec {
 namespace spatial {
 
@@ -34,16 +21,6 @@ typedef index_point value;
  */
 template <typename Point>
 class Validator : public SpatialBase<Point> {
-  /**
-   * Función recursiva de búsqueda.
-   *
-   * @param target Punto a buscar
-   * @param node Nodo actual
-   *
-   * @return Retorna referencia al Nodo que contiene o podría contener el punto
-   * buscado
-   */
-
  private:
   bgi::rtree<value, bgi::linear<16, 4>> rtree;
 
