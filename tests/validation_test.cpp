@@ -40,8 +40,10 @@ TEST(SimpleTest, basicTest) {
     instancia.insert(p);
   }
 
-  auto reference_result = validator.nearest_neighbor(point_t({50, 50}));
-  auto result = instancia.nearest_neighbor(point_t({50, 50}));
+  point_t p({50, 50});
+
+  auto reference_result = validator.nearest_neighbor(p);
+  auto result = instancia.nearest_neighbor(p);
   
   EXPECT_EQ(reference_result, result);
 }
